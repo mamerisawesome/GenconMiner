@@ -11,3 +11,6 @@ __pycache__
 
 # python env
 py_modules
+
+# release
+dist

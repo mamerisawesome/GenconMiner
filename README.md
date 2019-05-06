@@ -35,7 +35,34 @@ meaning_of_life = """
     <b>And another one</b>
 """
 bulk_miner = GenconMiner(text=meaning_of_life)
-bulk_miner.to_text() # Hello\ndarkness my old friend\nAnd another one
+print(bulk_miner.to_text()) # Hello\ndarkness my old friend\nAnd another one
+```
+
+## Parent to target
+
+Use-case on walking document and extracting the targets.
+
+```python
+song_of_the_day = """
+    <table id="mother">
+        <tr>
+            <td class="target-1">Mamma Mia</td>
+            <td class="target-2">Here I go again</td>
+            <td class="target-3">My my</td>
+            <td class="target-4">How can I resist you</td>
+        </tr>
+    </table>
+"""
+walk_miner = GenconMiner(text=song_of_the_day)
+print(walk_miner.extract('#mother', '.target-1')[0].text) # Mamma Mia
+print(walk_miner.extract('#mother', '.target-3')[0].text) # My my
+print(walk_miner.extract('#mother', 'td'))
+# [
+#   <td class="target-1">Mamma Mia</td>,
+#   <td class="target-2">Here I go again</td>,
+#   <td class="target-3">My my</td>,
+#   <td class="target-4">How can I resist you</td>
+# ]
 ```
 
 ## Author
