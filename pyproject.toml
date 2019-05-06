@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "GenconMiner"
-version = "0.1.0"
+version = "0.1.1"
 description = "Wraps Pip packages (beautifulsoup and requests) to a more concise content extractor"
 readme = "README.md"
 authors = ["Almer Mendoza <amendoza@stratpoint.com>"]
