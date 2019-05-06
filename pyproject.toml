@@ -7,6 +7,8 @@ authors = ["Almer Mendoza <amendoza@stratpoint.com>"]
 packages = [
     { include = "html_content_miner" }
 ]
+license = "MIT"
+repository = "https://github.com/mamerisawesome/GenconMiner"
 
 [tool.poetry.scripts]
 jupyter = 'scripts:jupyter'
