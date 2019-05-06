@@ -1,14 +1,14 @@
 [tool.poetry]
 name = "GenconMiner"
 version = "0.1.0"
-description = ""
+description = "Wraps Pip packages (beautifulsoup and requests) to a more concise content extractor"
 readme = "README.md"
 authors = ["Almer Mendoza <amendoza@stratpoint.com>"]
+license = "MIT"
+repository = "https://github.com/mamerisawesome/GenconMiner"
 packages = [
     { include = "html_content_miner" }
 ]
-license = "MIT"
-repository = "https://github.com/mamerisawesome/GenconMiner"
 
 [tool.poetry.scripts]
 jupyter = 'scripts:jupyter'

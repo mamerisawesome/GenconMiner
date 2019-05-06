@@ -28,10 +28,10 @@ class GenconMiner:
     def _extract_from_text(self, parent: str, target: str=None) -> list:
         bs_txt = BeautifulSoup(self.text, 'html.parser')
         if target is not None:
-            parent_txt = bs_txt.find(parent)
-            return parent_txt.find_all(target)
+            parent_txt = bs_txt.select_one(parent)
+            return parent_txt.select(target)
 
-        parent_txt = bs_txt.find_all(parent)
+        parent_txt = bs_txt.select(parent)
         return parent_txt
 
     def extract(self, parent: str, target: str=None) -> list:
