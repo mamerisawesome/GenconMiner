@@ -1,0 +1,13 @@
+# notebooks
+.ipynb_checkpoints
+
+# python bindings to C
+*.pyc
+__pycache__
+*egg-info*
+
+# .vscode conf
+.vscode
+
+# python env
+py_modules

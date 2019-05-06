@@ -1,0 +1,26 @@
+[tool.poetry]
+name = "GenconMiner"
+version = "0.1.0"
+description = ""
+readme = "README.md"
+authors = ["Almer Mendoza <amendoza@stratpoint.com>"]
+packages = [
+    { include = "html_content_miner" }
+]
+
+[tool.poetry.scripts]
+jupyter = 'scripts:jupyter'
+
+[tool.poetry.dependencies]
+python = "^3.6"
+beautifulsoup4 = "^4.7"
+jupyter = "^1.0"
+jupyterlab = "^0.35.6"
+requests = "^2.21"
+
+[tool.poetry.dev-dependencies]
+pytest = "^3.0"
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
