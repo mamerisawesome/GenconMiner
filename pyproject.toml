@@ -7,7 +7,7 @@ authors = ["Almer Mendoza <amendoza@stratpoint.com>"]
 license = "MIT"
 repository = "https://github.com/mamerisawesome/GenconMiner"
 packages = [
-    { include = "html_content_miner" }
+    { include = "gencon_miner" }
 ]
 
 [tool.poetry.scripts]
@@ -16,8 +16,6 @@ jupyter = 'scripts:jupyter'
 [tool.poetry.dependencies]
 python = "^3.6"
 beautifulsoup4 = "^4.7"
-jupyter = "^1.0"
-jupyterlab = "^0.35.6"
 requests = "^2.21"
 
 [tool.poetry.dev-dependencies]
