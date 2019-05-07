@@ -46,23 +46,24 @@ class GenconMiner:
         if self.url and not self.text:
             self._get_html_data()
 
-        soup = self.text
-        if not isinstance(self.text, BeautifulSoup):
-            soup = BeautifulSoup(self.text, 'html.parser')
+        if not hasattr(self, 'soup'):
+            self.soup = self.text
 
-        [s.extract() for s in soup(['script', 'style'])]
-        return soup.get_text("\n", strip=True)
+        if not isinstance(self.soup, BeautifulSoup):
+            self.soup = BeautifulSoup(self.text, 'html.parser')
+
+        [s.extract() for s in self.soup(['script', 'style'])]
+        return self.soup.get_text("\n", strip=True)
 
     def to_soup(self) -> str:
         if self.url and not self.text:
             self._get_html_data()
 
-        if self.soup:
+        if hasattr(self, 'soup'):
             return self.soup
 
-        soup = self.text
+        self.soup = self.text
         if not isinstance(self.text, BeautifulSoup):
-            soup = BeautifulSoup(self.text, 'html.parser')
+            self.soup = BeautifulSoup(self.text, 'html.parser')
 
-        self.soup = soup
-        return soup
+        return self.soup
